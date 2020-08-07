@@ -1,0 +1,18 @@
+.box {
+  padding: 10px 7px 5px 3px;
+  margin: 10px 7px 5px 3px;
+  border: 5px solid blue;
+  display: inline-block;
+  height: 300px;
+  width: 48%;
+  box-sizing: border-box;
+}
+
+div:first-of-type {
+  visibility: hidden;
+  /* display: none; */
+}
+
+div:last-of-type:hover {
+  border: 5px solid green;
+}

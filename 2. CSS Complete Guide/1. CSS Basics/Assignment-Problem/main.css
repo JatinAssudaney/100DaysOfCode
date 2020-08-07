@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+code {
+  font-family: monospace sans-serif;
+  color: red;
+}
+
+h1 {
+  color: rgb(3, 223, 223);
+}
+
+.green {
+  color: green;
+}
+ol li {
+  background-color: black;
+  color: white;
+}
+
+li + li {
+  /* Use a combinator to give all <li> elements 
+  but the first one (!) a black background and 
+  white text color (don't worry if the numbers disappear). */
+  background-color: white;
+  color: black;
+}
