@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  color: #333333;
+  font-family: "Raleway", sans-serif;
+}
+
+.title,
+.subtitle {
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.container {
+  margin: 30px 10px;
+  padding: 8px 16px;
+  background: #eeeeee;
+}
+
+.image-container {
+  text-align: center;
+  background: white;
+  padding: 8px;
+}
+
+.caption {
+  margin: 15px 0 5px 0;
+  font-size: 1rem;
+}
+
+.timeline {
+  width: 50%;
+  margin: 3rem auto;
+}
+
+.timeline--heading {
+  text-align: center;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+.timeline--items {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.timeline--item {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.timeline--item__date {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.quote-container {
+  font-style: italic;
+}
+
+.quote-author {
+  margin: 1rem 0;
+}
+
+.footer {
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.footer a {
+  color: #477ca7;
+}
+
+.footer a:visited {
+  color: #74638f;
+}
