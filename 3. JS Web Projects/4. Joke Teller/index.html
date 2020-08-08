@@ -8,15 +8,17 @@
       href="https://s2.googleusercontent.com/s2/favicons?domain=udemy.com"
       type="image/png"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
     <link rel="stylesheet" href="style.css" />
-    <title>Template</title>
+    <title>Joke Teller</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
   </head>
-  <body>
+  <body class="darkJoke">
+    <div class="container">
+      <button id="button">Tell Me A Joke</button>
+      <audio id="audio" controls hidden></audio>
+    </div>
+    <script src="config.js"></script>
+    <script src="voice.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
