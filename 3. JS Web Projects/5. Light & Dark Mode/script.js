@@ -5,6 +5,7 @@ const image1 = document.querySelector("#image1");
 const image2 = document.querySelector("#image2");
 const image3 = document.querySelector("#image3");
 const textBox = document.querySelector("#text-box");
+let darkTheme = false;
 
 // Dark or Light Images
 function imageMode(color) {
@@ -32,11 +33,13 @@ function switchTheme(event) {
   if (event.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
-    toggleDarkLightMode(true);
+    darkTheme = true;
+    toggleDarkLightMode(darkTheme);
   } else {
     document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
-    toggleDarkLightMode(false);
+    darkTheme = false;
+    toggleDarkLightMode(darkTheme);
   }
 }
 // Event Listener
@@ -48,6 +51,7 @@ if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
-    toggleDarkLightMode(true);
+    darkTheme = true;
+    toggleDarkLightMode(darkTheme);
   }
 }
