@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import PostList from "./PostList";
 
-export default class App extends Component {
-  render() {
-    return <div></div>;
-  }
-}
+const App = () => {
+  return (
+    <div className="ui container">
+      <PostList />
+    </div>
+  );
+};
+
+export default App;
