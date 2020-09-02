@@ -15,18 +15,6 @@
       "description": "LIVE AT 9:30PM",
       "userId": "109088334606530532436",
       "id": 3
-    },
-    {
-      "title": "Programmatic Navigation",
-      "description": "Done through Router instead of BrowserRouter",
-      "userId": "109088334606530532436",
-      "id": 4
-    },
-    {
-      "title": "Component Reused",
-      "description": "DOES IT WORK?? UPDATE: YES IT WORKED FINALLY",
-      "userId": "109088334606530532436",
-      "id": 5
     }
   ]
 }
