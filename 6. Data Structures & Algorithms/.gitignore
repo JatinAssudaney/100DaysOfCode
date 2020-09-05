@@ -1,2 +1,7 @@
 /0. Grokking the System Design Interview
 Questions.xlsx
+
+# Need to remove ignores later
+/recursion/FloodFill.java
+/recursion/NQueens.java
+/recursion/TargetSumSubsets.java
