@@ -2,29 +2,27 @@ package sorting;
 
 import java.util.Scanner;
 
-public class Sort012 {
-    public static void sort012(int[] arr) {
-        // write your code here
+public class PartitioningArray {
+    public static void partition(int[] arr, int pivot) {
+        // 0 to j -> <= pivot
+        // j to i-1 -> > pivot
+        // i to arr.length-1 -> unknown
         int i = 0;
         int j = 0;
-        int k = arr.length - 1;
-        while (i <= k) {
-            if (arr[i] == 0) {
+        while (i < arr.length) {
+            if (arr[i] > pivot) {
+                i++;
+            } else {
                 swap(arr, i, j);
                 i++;
                 j++;
-            } else if (arr[i] == 1) {
-                i++;
-            } else if (arr[i] == 2) {
-                swap(arr, i, k);
-                k--;
             }
         }
+
     }
 
-    // used for swapping ith and jth elements of array
     public static void swap(int[] arr, int i, int j) {
-        System.out.println("Swapping index " + i + " and index " + j);
+        System.out.println("Swapping " + arr[i] + " and " + arr[j]);
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -32,8 +30,9 @@ public class Sort012 {
 
     public static void print(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+            System.out.print(arr[i] + " ");
         }
+        System.out.println();
     }
 
     public static void main(String[] args) throws Exception {
@@ -43,8 +42,10 @@ public class Sort012 {
         for (int i = 0; i < n; i++) {
             arr[i] = scn.nextInt();
         }
-        sort012(arr);
+        int pivot = scn.nextInt();
+        partition(arr, pivot);
         print(arr);
         scn.close();
     }
+
 }

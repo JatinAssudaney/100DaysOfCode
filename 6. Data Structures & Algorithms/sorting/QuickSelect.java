@@ -2,15 +2,20 @@ package sorting;
 
 import java.util.Scanner;
 
-public class QuickSort {
-    public static void quickSort(int[] arr, int lo, int hi) {
-        if (lo > hi) {
-            return;
-        }
+// Kth SMALLEST ELEMENT
+
+public class QuickSelect {
+
+    public static int kthSmallest(int[] arr, int lo, int hi, int k) {
         int pivot = arr[hi];
         int pivotIndex = partition(arr, pivot, lo, hi);
-        quickSort(arr, lo, pivotIndex - 1);
-        quickSort(arr, pivotIndex + 1, hi);
+        if (k == pivotIndex) {
+            return pivot;
+        } else if (k < pivotIndex) {
+            return kthSmallest(arr, lo, pivotIndex - 1, k);
+        } else {
+            return kthSmallest(arr, pivotIndex + 1, hi, k);
+        }
     }
 
     public static int partition(int[] arr, int pivot, int lo, int hi) {
@@ -51,8 +56,9 @@ public class QuickSort {
         for (int i = 0; i < n; i++) {
             arr[i] = scn.nextInt();
         }
-        quickSort(arr, 0, arr.length - 1);
-        print(arr);
+        int k = scn.nextInt();
+        int res = kthSmallest(arr, 0, arr.length - 1, k - 1);
+        System.out.println(res);
         scn.close();
     }
 }
