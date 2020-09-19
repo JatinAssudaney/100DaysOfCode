@@ -1,3 +1,5 @@
+package getting_started;
+
 public class PrintZ {
     public static void main(String[] args) {
         int length = 5;
