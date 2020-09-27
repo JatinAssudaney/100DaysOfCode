@@ -5,7 +5,7 @@ describe("Updation of the records", () => {
   let joe;
 
   beforeEach(async () => {
-    joe = await new User({ name: "Joe", postCount: 0 }).save();
+    joe = await new User({ name: "Joe", likes: 0 }).save();
   });
 
   const assertByName = async (instance) => {
@@ -38,10 +38,10 @@ describe("Updation of the records", () => {
     assertByName(joe);
   });
 
-  it("A user can have their postCount incremented by 1", async () => {
+  it("A user can have their likes incremented by x", async () => {
     let increment = 1;
-    await User.updateMany({ name: "Joe" }, { $inc: { postCount: increment } });
+    await User.updateMany({ name: "Joe" }, { $inc: { likes: increment } });
     const user = await User.findOne({ name: "Joe" });
-    assert(user.postCount === increment);
+    assert(user.likes === increment);
   });
 });
