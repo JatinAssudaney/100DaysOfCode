@@ -1,4 +1,4 @@
-const Artist = require('../models/artist');
+const Artist = require("../models/artist");
 
 /**
  * Sets a group of Artists as not retired
@@ -6,4 +6,5 @@ const Artist = require('../models/artist');
  * @return {promise} A promise that resolves after the update
  */
 module.exports = (_ids) => {
+  return Artist.updateMany({ _id: { $in: _ids } }, { retired: false });
 };
