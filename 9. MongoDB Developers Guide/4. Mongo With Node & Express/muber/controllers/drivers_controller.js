@@ -29,4 +29,14 @@ module.exports = {
       next(error);
     }
   },
+
+  async delete(req, res, next) {
+    try {
+      const driverId = req.params.id;
+      const driver = await Driver.findByIdAndDelete({ _id: driverId });
+      res.status(204).send(driver);
+    } catch (error) {
+      next(error);
+    }
+  },
 };

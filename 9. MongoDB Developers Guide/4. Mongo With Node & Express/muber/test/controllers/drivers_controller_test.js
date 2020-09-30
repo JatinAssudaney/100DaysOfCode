@@ -24,4 +24,13 @@ describe("Drivers Controller", () => {
     const existingDriver = await Driver.findOne({ email: "t@t.com" });
     assert(existingDriver.driving);
   });
+
+  it("DELETING to /api/drivers/:id deletes an existing driver", async () => {
+    const driver = await new Driver({
+      email: "t@t.com",
+    }).save();
+    await request(app).delete(`/api/drivers/${driver._id}`);
+    const existingDriver = await Driver.findOne({ email: "t@t.com" });
+    assert(!existingDriver);
+  });
 });
