@@ -5,13 +5,28 @@ module.exports = {
     res.send({ hi: "there" });
   },
 
-  async create(req, res) {
+  async create(req, res, next) {
     try {
       const driverProps = req.body;
       const driver = await Driver.create(driverProps);
       res.send(driver);
     } catch (error) {
-      res.send(error);
+      next(error);
+    }
+  },
+
+  async edit(req, res, next) {
+    try {
+      const driverId = req.params.id;
+      const driverProps = req.body;
+      const driver = await Driver.findByIdAndUpdate(
+        { _id: driverId },
+        driverProps,
+        { new: true }
+      );
+      res.send(driver);
+    } catch (error) {
+      next(error);
     }
   },
 };
