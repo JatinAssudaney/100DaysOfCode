@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== "test") {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
+    useCreateIndex: true,
   });
 }
 
