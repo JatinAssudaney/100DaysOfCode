@@ -1,11 +1,13 @@
 import React from "react";
 import "./App.css";
-import ClassCounter from "./components/ClassCounter";
+import UseEffectCounter from "./components/UseEffectCounter";
+// import ClassCounter from "./components/ClassCounter";
 
 function App() {
   return (
     <div className="App">
-      <ClassCounter />
+      {/* <ClassCounter /> */}
+      <UseEffectCounter />
     </div>
   );
 }
