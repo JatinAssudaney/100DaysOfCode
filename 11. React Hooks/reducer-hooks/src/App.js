@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
+import MultipleUseReducer from "./components/MultipleUseReducer";
 // import Counter from "./components/Counter";
-import CustomCounter from "./components/CustomCounter";
+// import CustomCounter from "./components/CustomCounter";
 
 function App() {
   return (
     <div className="App">
       {/* <Counter /> */}
-      <CustomCounter />
+      {/* <CustomCounter /> */}
+      <MultipleUseReducer />
     </div>
   );
 }
