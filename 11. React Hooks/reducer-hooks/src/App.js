@@ -1,6 +1,8 @@
 import React, { createContext, useReducer } from "react";
 import "./App.css";
-import DataFetching from "./components/DataFetching";
+
+import DataFetchingReducer from "./components/DataFetchingReducer";
+// import DataFetching from "./components/DataFetching";
 // import ComponentA from "./components/useReducerWithContext/ComponentA";
 // import ComponentB from "./components/useReducerWithContext/ComponentB";
 // import ComponentC from "./components/useReducerWithContext/ComponentC";
@@ -40,7 +42,8 @@ function App() {
         <ComponentA />
         <ComponentB />
         <ComponentC /> */}
-        <DataFetching />
+        {/* <DataFetching /> */}
+        <DataFetchingReducer />
       </div>
     </CountContext.Provider>
   );
