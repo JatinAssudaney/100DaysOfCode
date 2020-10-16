@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Counter from "./components/Counter";
+import UserForm from "./components/UserForm";
 // import ChangeDocTitleCustomHook from "./components/ChangeDocTitleCustomHook";
 // import ChangeDocTitle from "./components/ChangeDocTitle";
 
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       {/* <ChangeDocTitle /> */}
       {/* <ChangeDocTitleCustomHook /> */}
-      <Counter />
+      {/* <Counter /> */}
+      <UserForm />
     </div>
   );
 }
