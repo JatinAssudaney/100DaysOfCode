@@ -1,9 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import ChangeDocTitleCustomHook from "./components/ChangeDocTitleCustomHook";
+// import ChangeDocTitle from "./components/ChangeDocTitle";
 
 function App() {
-  return <div className="App">App</div>;
+  return (
+    <div className="App">
+      {/* <ChangeDocTitle /> */}
+      <ChangeDocTitleCustomHook />
+    </div>
+  );
 }
 
 export default App;
