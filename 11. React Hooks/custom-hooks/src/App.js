@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
-import ChangeDocTitleCustomHook from "./components/ChangeDocTitleCustomHook";
+import Counter from "./components/Counter";
+// import ChangeDocTitleCustomHook from "./components/ChangeDocTitleCustomHook";
 // import ChangeDocTitle from "./components/ChangeDocTitle";
 
 function App() {
   return (
     <div className="App">
       {/* <ChangeDocTitle /> */}
-      <ChangeDocTitleCustomHook />
+      {/* <ChangeDocTitleCustomHook /> */}
+      <Counter />
     </div>
   );
 }
