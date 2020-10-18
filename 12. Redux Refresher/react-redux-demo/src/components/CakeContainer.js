@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { buyCake } from "../actions";
 
-export const CakeContainer = (props) => {
+const CakeContainer = (props) => {
   return (
     <div>
       <h2>Number of cakes - {props.numOfCakes}</h2>
