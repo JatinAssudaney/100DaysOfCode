@@ -171,8 +171,21 @@ async function errorHandling() {
 }
 
 // CANCEL TOKEN
-function cancelToken() {
-  console.log("Cancel Token");
+async function cancelToken() {
+  const source = axios.CancelToken.source();
+  if (true) {
+    source.cancel("Request Canceled");
+  }
+  try {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/todos", {
+      cancelToken: source.token,
+    });
+    showOutput(res);
+  } catch (thrown) {
+    if (axios.isCancel(thrown)) {
+      console.log("Request Canceled", thrown.message);
+    }
+  }
 }
 
 // INTERCEPTING REQUESTS & RESPONSES
