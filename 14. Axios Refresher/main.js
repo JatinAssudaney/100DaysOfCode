@@ -92,14 +92,22 @@ async function removeTodo() {
 }
 
 // SIMULTANEOUS DATA
-function getData() {
-  console.log("Simultaneous Request");
+async function getData() {
+  try {
+    const [todos, posts] = await axios.all([
+      axios.get("https://jsonplaceholder.typicode.com/todos"),
+      axios.get("https://jsonplaceholder.typicode.com/posts"),
+    ]);
+    // res[0] -> todos list
+    // res[1] -> posts list
+    showOutput(posts);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 // CUSTOM HEADERS
-function customHeaders() {
-  console.log("Custom Headers");
-}
+function customHeaders() {}
 
 // TRANSFORMING REQUESTS & RESPONSES
 function transformResponse() {
@@ -117,6 +125,18 @@ function cancelToken() {
 }
 
 // INTERCEPTING REQUESTS & RESPONSES
+axios.interceptors.request.use(
+  (config) => {
+    const time = `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
+    console.log(
+      `${config.method.toUpperCase()} request sent to ${config.url} at ${time}`
+    );
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 // AXIOS INSTANCES
 
