@@ -151,8 +151,23 @@ async function transformResponse() {
 }
 
 // ERROR HANDLING
-function errorHandling() {
-  console.log("Error Handling");
+async function errorHandling() {
+  try {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/todoss");
+    showOutput(res);
+  } catch (error) {
+    if (error.response) {
+      // Server Responded with a status other than in 200 range
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (err.request) {
+      // Request was made but got no response
+      console.error(err.request);
+    } else {
+      console.error(err.message);
+    }
+  }
 }
 
 // CANCEL TOKEN
