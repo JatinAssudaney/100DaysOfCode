@@ -203,7 +203,14 @@ axios.interceptors.request.use(
 );
 
 // AXIOS INSTANCES
-
+const axiosInstance = axios.create({
+  // Other Custom Settings Can be Added
+  baseURL: "https://jsonplaceholder.typicode.com",
+});
+async function getComments() {
+  const res = await axiosInstance.get("/comments");
+  showOutput(res);
+}
 // Show output in browser
 function showOutput(res) {
   document.getElementById("res").innerHTML = `
@@ -252,3 +259,4 @@ document
   .addEventListener("click", transformResponse);
 document.getElementById("error").addEventListener("click", errorHandling);
 document.getElementById("cancel").addEventListener("click", cancelToken);
+document.getElementById("axiosInstance").addEventListener("click", getComments);
