@@ -27,9 +27,8 @@ const server = http.createServer((req, res) => {
 
   res.end(
     JSON.stringify({
-      success: false,
-      error: "Not Found",
-      data: null,
+      success: true,
+      data: todos,
     })
   );
 });
