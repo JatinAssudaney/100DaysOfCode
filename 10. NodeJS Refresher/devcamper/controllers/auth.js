@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 // Get token from model, create cookie and send response
 const sendTokenResponse = (user, statusCode, res) => {
-  //   Create a Token
+  // Create token
   const token = user.getSignedJwtToken();
 
   const options = {
@@ -18,10 +18,10 @@ const sendTokenResponse = (user, statusCode, res) => {
     options.secure = true;
   }
 
-  res
-    .status(statusCode)
-    .cookie("token", token, options)
-    .json({ success: true, token });
+  res.status(statusCode).cookie("token", token, options).json({
+    success: true,
+    token,
+  });
 };
 
 // @desc    Register User
@@ -41,7 +41,7 @@ exports.register = asyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res);
 });
 
-// @desc    Logic User
+// @desc    Login User
 // @route   POST /api/v1/auth/login
 // @access  Public
 exports.login = asyncHandler(async (req, res, next) => {
